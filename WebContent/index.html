@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodNest</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Hamburger menu icon -->
+    <div class="menu-icon">&#9776;</div>
+
+    <div class="navbar-container">
+          <span class="logo">FoodNest</span>
+          <div class="nav">
+              <a href="#">Home</a>
+              <a href="#">Restaurants</a>
+              <a href="#categories">Categories</a>
+              <a href="#">My Orders</a>
+              <a href="#" id="cart-btn">Cart 🛒</a>
+              <a href="#" id="profile-link" style="display:none;">My Profile</a>
+              <a href="#" id="login-btn" class="login-animated">Login</a>
+            </div>
+        </div>
+    <!-- ✅ Popular Content Container -->
+    <div class="home-content" style="display: block;">
+      <!-- Popular Restaurants -->
+      <div class="popular-block">
+        <h2>⭐ Popular Restaurants</h2>
+        <div class="popular-grid">
+          <div class="popular-card">
+            <img src="images/restaurant1.jpg" alt="Spicy Treat">
+            <h3>Spicy Treat</h3>
+            <p>★★★★☆ (4.5)</p>
+          </div>
+          <div class="popular-card">
+            <img src="images/restaurant2.jpg" alt="Pizza Palace">
+            <h3>Pizza Palace</h3>
+            <p>★★★★☆ (4.3)</p>
+          </div>
+          <div class="popular-card">
+            <img src="images/restaurant3.jpg" alt="Grill & Chill">
+            <h3>Grill & Chill</h3>
+            <p>★★★★★ (4.8)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular Food Offers -->
+      <div class="popular-block">
+        <h2>🔥 Popular Food Offers</h2>
+        <div class="popular-grid">
+          <div class="popular-card">
+            <img src="images/offer1.jpg" alt="Cheese Burger">
+            <h3>Cheese Burger</h3>
+            <p>From ₹99</p>
+          </div>
+          <div class="popular-card">
+            <img src="images/offer2.jpg" alt="Hyderabadi Biryani">
+            <h3>Hyderabadi Biryani</h3>
+            <p>Flat 20% Off</p>
+          </div>
+          <div class="popular-card">
+            <img src="images/offer3.jpg" alt="Margherita Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>Buy 1 Get 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Login Form Modal -->
+  <div class="login-form" id="login-form">
+    <span class="close-btn">&times;</span>
+    <h2>Login</h2>
+    <form action="auth" method="post">
+  	<input type="hidden" name="action" value="login" />
+      <label for="username">Phone Number</label><br>
+      <input type="text" id="username" name="username" placeholder="Phone Number" required /><br /><br />
+      <div class="password-container">
+        <label for="password">Password:</label>
+        <p>
+          <a href="#">Forgot Password?</a>
+        </p>
+      </div>
+      <input type="password" id="password" name="password" placeholder="Enter password" required /><br /><br />
+      <label for="remember-me">
+        <input type="checkbox" id="remember-me" name="remember-me" />
+        Remember me
+      </label><br /><br />
+      <button type="submit">Sign in</button><br /><br />
+      <div class="signup-link">
+        <p>Don't have an account?</p>
+        <a href="#" id="signup-btn" class="cta-btn">Sign up</a>
+      </div>
+      <div class="user-type-switch">
+        <p>Are you a restaurant owner?</p>
+        <a href="vendor.html" class="switch-link">Login as Vendor</a>
+      </div>
+
+      <div class="divider">
+        <hr>
+        <span>Or continue with</span>
+        <hr>
+      </div>
+      <div class="social-login">
+        <a href="#" class="google-login">
+          <img src="https://logopng.com.br/logos/google-37.png" alt="Google Logo" width="30" height="30" /></a>
+        <a href="#" class="facebook-login"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/512px-Facebook_f_logo_%282019%29.svg.png"
+            alt="Facebook Logo" width="30" height="30" /></a>
+      </div><br />
+    </form>
+  </div>
+  <!-- Sign up Form Modal -->
+  <div class="signup-form" id="signup-form">
+    <span class="close-btn">&times;</span>
+    <h2>Create Your Account</h2>
+    <form action="auth" method="post" enctype="multipart/form-data">
+      <div class="name-container">
+        <label for="username">First Name</label><br>
+        <label for="username">Last Name</label><br>
+      </div>
+      <div class="name-container">
+        <input type="text" id="first-name" name="first-name" placeholder="First name" required />
+        <input type="text" id="last-name" name="last-name" placeholder="Last name" required />
+      </div>
+      <label for="username">Phone Number</label><br>
+      <input type="text" id="signup-phone" name="phone" placeholder="Phone Number" required />
+      <label for="new-password">Password:</label><br />
+      <input type="password" id="new-password" name="password" placeholder="Password" required /><br />
+      <label for="confirm-password">Confirm Password:</label><br />
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password"
+        required /><br />
+      <p id="password-error" class="error-text" style="display: none;">
+        ❗Passwords do not match.
+      </p>
+
+      <label for="agree" class="agree">
+        <input type="checkbox" id="agree" name="agree" required />
+        I agree to the <a href="">Terms of Service</a> and <a>Privacy Policy</a>
+      </label><br /><br />
+      <input type="hidden" name="action" value="signup">
+      <button type="submit">Create Account</button><br /><br />
+      <div class="signup-link1">
+        <p>Already have an account?</p>
+        <a href="#" id="login-link" class="cta-btn">Sign in</a>
+      </div>
+      <div class="divider">
+        <hr>
+        <span>Or sign up with</span>
+        <hr>
+      </div>
+      <div class="social-login">
+        <a href="#" class="google-login">
+          <img src="https://logopng.com.br/logos/google-37.png" alt="Google Logo" width="30" height="30" /></a>
+        <a href="#" class="facebook-login"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/512px-Facebook_f_logo_%282019%29.svg.png"
+            alt="Facebook Logo" width="30" height="30" /></a>
+      </div><br />
+    </form>
+  </div>
+  <div id="signup-success" class="success-message" style="display: none;">
+    Signup successful! Please log in.
+  </div>
+  <!-- My Profile Page -->
+  <div id="profile-page" class="profile-page" style="display: none;">
+    <!-- Mini Navbar -->
+    <div class="profile-navbar">
+      <h2>👤 My Profile</h2>
+
+    </div>
+
+    <!-- Profile Details -->
+    <div id="profile-info" class="profile-info">
+  <p><strong>Name:</strong> John Doe</p>
+  <p><strong>Mobile:</strong> +91-9876543210</p>
+  <p><strong>Address:</strong> Saved after last order</p>
+</div>
+
+<button id="logout-btn">Logout</button>
+
+  </div>
+<!-- Restaurant Page -->
+
+<!-- All Restaurants List Page -->
+<div id="restaurants-page" class="restaurants-page" style="display: none;">
+  <h2>🍽️ Available Restaurants</h2>
+  <div id="restaurant-list" class="restaurant-grid">
+    <!-- Restaurant cards will be generated here -->
+  </div>
+</div>
+
+<!-- Single Restaurant Menu Page -->
+<div id="restaurant-page" class="restaurant-page" style="display: none;">
+  <div class="restaurant-header">
+    <h2 id="restaurant-name">🍽️ Restaurant Name</h2>
+    <p id="restaurant-rating">⭐ 4.5</p>
+    <p id="restaurant-offer">🔥 Flat 20% Off on all items!</p>
+  </div>
+
+  <div class="restaurant-menu">
+    <h3>📋 Menu</h3>
+    <div id="restaurant-menu-grid" class="menu-grid">
+      <!-- Menu items will be added dynamically -->
+    </div>
+  </div>
+
+  <button onclick="goBackToHome()">⬅ Back to Home</button>
+</div>
+
+
+
+  <div id="categories-wrapper" class="categories-wrapper" style="display: none;">
+    <span class="closeb-btn" style="display: none;">&times;</span>
+    <div class="categories-page">
+
+      <!-- Category Navbar -->
+      <nav class="category-navbar">
+        <a href="#" data-type="all" class="active">All</a>
+        <a href="#" data-type="meals">Meals</a>
+        <a href="#" data-type="biryanis">Biryanis</a>
+        <a href="#" data-type="snacks">Snacks</a>
+        <a href="#" data-type="cooldrinks">Cool drinks</a>
+        <a href="#" data-type="icecream">Ice Cream</a>
+        <a href="#" data-type="bakery">Bakery</a>
+      </nav>
+
+      <h2>🍽️ Explore Food Categories</h2>
+      <div id="categoryGrid" class="category-grid"></div>
+    </div>
+  </div>
+  <!-- Cart Modal -->
+  <div id="cart-wrapper" class="cart-wrapper" style="display: none;">
+    <div class="cart-page">
+      <h2>🛒 Your Cart</h2>
+      <div id="empty-cart-message" class="empty-cart-msg" style="display: none;">
+        <p>Your cart is empty.</p>
+      </div>
+
+      <div id="cartGrid" class="cart-grid"></div>
+
+      <div class="cart-summary">
+        <p id="cart-total">Total: ₹0</p>
+        <div class="cart-actions">
+          <button id="empty-cart-btn">Empty Cart</button>
+          <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Checkout Page -->
+  <div id="checkout-page" class="checkout-page" style="display: none;">
+
+    <h2>✅ Order Summary</h2>
+
+    <!-- List of selected items -->
+    <div id="checkout-items"></div>
+
+    <!-- Total price -->
+    <h3 id="checkout-total"></h3>
+
+    <!-- Address input -->
+    <!-- Address input -->
+    <textarea id="delivery-address" placeholder="Enter delivery address..." rows="3"
+      style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #ccc; margin-top: 20px;"></textarea>
+    <p id="address-error" style="color: red; display: none; margin-top: 8px; font-weight: 500;">
+      ❗ Please enter your delivery address.
+    </p>
+
+
+    <!-- Pay Now button -->
+    <button id="pay-now-btn" style="
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #0ea5e9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">
+      💳 Pay Now
+    </button>
+  </div>
+
+  <!-- ‑‑‑ Payment Page ‑‑‑ -->
+  <div id="payment-page" class="payment-page" style="display:none;">
+    <p id="cart-empty-msg" class="error-message" style="display: none;"></p>
+    <h2>💳 Choose Payment Method</h2>
+
+    <div class="payment-options">
+      <button onclick="confirmPayment('UPI')">UPI</button>
+      <button onclick="confirmPayment('ATM / Debit Card')">ATM / Debit Card</button>
+      <button onclick="confirmPayment('Cash on Delivery')">Cash on Delivery</button>
+      <button onclick="confirmPayment('Pay on Delivery')">Pay on Delivery</button>
+    </div>
+  </div>
+
+  <!-- My Orders Page -->
+  <div id="my-orders-page" class="my-orders-page" style="display: none;">
+    <h2>📦 My Orders</h2>
+    <div id="orders-list"></div>
+    <button onclick="goBackToHome()">⬅ Back to Home</button>
+  </div>
+<div id="cart-alert" class="cart-alert"></div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

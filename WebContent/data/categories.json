@@ -1,0 +1,13 @@
+[
+  { "name": "Veg Meals", "image": "images/meals.png", "type": "meals", "price": 120 },
+  { "name": "Chicken Biryani", "image": "images/chicken-biryani.jpg", "type": "biryanis", "price": 180 },
+  { "name": "Paneer Biryani", "image": "images/paneer-biryani.jpg", "type": "biryanis", "price": 160 },
+  { "name": "Samosa", "image": "images/samosa.jpg", "type": "snacks", "price": 25 },
+  { "name": "French Fries", "image": "images/fries.jpg", "type": "snacks", "price": 60 },
+  { "name": "Coca Cola", "image": "images/coke.jpg", "type": "cooldrinks", "price": 40 },
+  { "name": "Sprite", "image": "images/sprite.jpg", "type": "cooldrinks", "price": 40 },
+  { "name": "Pastry", "image": "images/pastry.jpg", "type": "bakery", "price": 70 },
+  { "name": "Cupcake", "image": "images/cupcake.jpg", "type": "bakery", "price": 50 },
+  { "name": "Vanilla Ice Cream", "image": "images/vanilla.jpg", "type": "icecream", "price": 80 },
+  { "name": "Chocolate Ice Cream", "image": "images/chocolate.jpg", "type": "icecream", "price": 90 }
+]

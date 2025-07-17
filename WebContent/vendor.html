@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vendor | FoodNest</title>
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <div class="navbar-container">
+      <div class="logo">FoodNest</div>
+      <div class="menu-icon">☰</div>
+      <div class="nav">
+	        <a href="#" id="home-link">Home</a>
+			<a href="#" id="orders-link">My Orders</a>
+			<a href="#" id="dashboard-link">Dashboard</a>
+			<a href="#" id="profile-link" style="display: none;">My Profile</a>
+			<a href="#" id="login-link">Login</a>
+      </div>
+    </div>
+
+    <!-- Login Form Modal -->
+    <div class="login-form" id="login-form">
+      <span class="close-btn" onclick="hideForms()">×</span>
+      <h2>Vendor Login</h2>
+      <form>
+        <label for="username">Phone Number</label><br>
+        <input type="text" name="vendor_phone" placeholder="Phone" required />
+        <div class="password-container">
+          <label for="password">Password:</label>
+          <p><a href="#">Forgot Password?</a></p>
+        </div>
+        <input type="password" name="password" placeholder="Password" required />
+        <label>
+          <input type="checkbox" name="remember-me" /> Remember me
+        </label><br /><br />
+        <button type="submit">Login</button>
+        <div class="signup-link">Don't have an account? <a href="#" id="signup-link" onclick="switchToSignup()">Signup</a></div>
+        <div class="user-type-switch">
+          <p>Are you a Customer?</p>
+          <a href="index.html" class="switch-link">Login as Customer</a>
+        </div>
+        <div class="divider"><hr><span>Or continue with</span><hr></div>
+        <div class="social-login">
+          <a href="#" class="google-login">
+            <img src="https://logopng.com.br/logos/google-37.png" width="30" height="30" />
+          </a>
+          <a href="#" class="facebook-login">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="30" height="30" />
+          </a>
+        </div><br />
+      </form>
+    </div>
+
+    <!-- Signup Form Modal -->
+    <div class="signup-form" id="signup-form">
+      <span class="close-btn" onclick="hideForms()">×</span>
+      <h2>Vendor Signup</h2>
+      <form>
+        <div class="name-container">
+          <label>First Name</label><br>
+          <label>Last Name</label><br>
+        </div>
+        <div class="name-container">
+          <input type="text" name="first_name" placeholder="First Name" required />
+          <input type="text" name="last_name" placeholder="Last Name" required />
+        </div>
+        <label>Phone Number</label><br>
+        <input type="tel" name="vendor_phone" placeholder="Phone" required />
+        <label>Email Address</label><br />
+        <input type="email" name="email" placeholder="Email" required />
+        <label>Restaurant Name</label><br />
+        <input type="text" name="restaurant_name" placeholder="Restaurant Name" required />
+        <label>Restaurant Address</label><br />
+        <textarea name="address" placeholder="Address" required></textarea>
+        <label>City / Area</label><br />
+        <input type="text" name="city" placeholder="City" required />
+        <label>Restaurant Type</label><br />
+        <select name="type" required>
+          <option value="">-- Select Type --</option>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
+          <option value="Both">Both</option>
+        </select>
+        <label>Password:</label><br />
+        <input type="password" name="password" placeholder="Password" required />
+        <label class="agree">
+          <input type="checkbox" id="agree" required />
+          I agree to the <a href="#">Terms</a> and <a href="#">Privacy</a>
+        </label><br /><br />
+        <button type="submit">Signup</button>
+        <div class="signup-link1">Already have an account? <a href="#" onclick="switchToLogin()">Login</a></div>
+        <div class="divider"><hr><span>Or sign up with</span><hr></div>
+        <div class="social-login">
+          <a href="#" class="google-login"><img src="https://logopng.com.br/logos/google-37.png" width="30" height="30" /></a>
+          <a href="#" class="facebook-login"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="30" height="30" /></a>
+        </div><br />
+      </form>
+    </div>
+
+    <!-- Home Section -->
+    <div class="home-section" id="home-section">
+      <h2>Welcome, Vendor!</h2>
+      <div class="dashboard-cards">
+        <div class="card"><h3>Total Orders</h3><p id="total-orders">123</p></div>
+        <div class="card"><h3>Total Revenue</h3><p id="total-revenue">₹45,000</p></div>
+        <div class="card"><h3>Active Items</h3><p id="active-items">25</p></div>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+<div id="orders-section" class="orders-section" style="display: none;">
+  <h2>🧾 Customer Orders</h2>
+  <div id="vendor-orders-list"></div> <!-- ✅ Add this inside orders section -->
+</div>
+
+
+
+    <!-- Restaurant Dashboard Section -->
+    <div class="restaurant-dashboard" id="restaurant-dashboard" style="display: none;">
+      <h2>Manage Your Menu</h2>
+      <div class="menu-list" id="menu-list">
+        <div class="menu-item">
+          
+          <button class="edit-item">Edit</button>
+          <button class="delete-item">Delete</button>
+        </div>
+      </div>
+      <div class="add-item-form">
+        <h3>Add New Item</h3>
+        <input type="text" id="item-name" placeholder="Item Name" />
+        <input type="number" id="item-price" placeholder="Price (₹)" />
+        <select id="item-type">
+          <option value="">-- Type --</option>
+          <option value="Veg">Veg</option>
+          <option value="Non-Veg">Non-Veg</option>
+        </select>
+        
+        <button id="add-item-btn">Add Item</button>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section" id="profile-section" style="display: none;">
+      <h2>Vendor Profile</h2>
+      <div id="profile-details"></div>
+      <button id="logout-btn" style="margin-top: 1em;">Logout</button>
+    </div>
+
+    <!-- Toast Message -->
+    <div class="toast-message" id="toast">Success</div>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

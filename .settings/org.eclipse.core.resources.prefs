@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebContent/CSS/style.css=UTF-8
+encoding//WebContent/CSS/styles.css=UTF-8
+encoding//WebContent/js/script.js=UTF-8
+encoding//WebContent/js/scripts.js=UTF-8
+encoding//src/api/AllMenuItemsServlet.java=UTF-8
+encoding//src/api/AuthServlet.java=UTF-8
+encoding//src/api/CartServlet.java=UTF-8
+encoding//src/api/OrderHistoryServlet.java=UTF-8
+encoding//src/api/OrderServlet.java=UTF-8
+encoding//src/api/RestaurantMenuServlet.java=UTF-8
+encoding//src/api/RestaurantServlet.java=UTF-8
+encoding//src/api/VendorAuthServlet.java=UTF-8
+encoding//src/api/VendorOrdersServlet.java=UTF-8
