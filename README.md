@@ -1,6 +1,5 @@
 ---
 
-```markdown
 # 🍽️ FoodNest – Online Food Ordering Web App
 
 **FoodNest** is a full-stack food ordering system designed for both customers and restaurant vendors. It supports user authentication, restaurant browsing, dynamic cart handling, and order tracking with a backend powered by Java Servlets and a MySQL database.
@@ -169,7 +168,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 This project is licensed under the MIT License.
 Feel free to use and modify as needed.
 
-```
+
 
 ---
 
