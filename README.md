@@ -135,9 +135,6 @@ FoodNest/
 ## 🙋‍♂️ Author
 
 **Ravi Narayana Brahma**  
-🔗 [GitHub](https://github.com/yourusername)  
-📧 ravi@example.com  
-📱 +91-XXXXXXXXXX
 
 ---
 
