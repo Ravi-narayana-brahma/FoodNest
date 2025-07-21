@@ -1,0 +1,18 @@
+# user.yaml
+
+name: Ravi Narayana Brahma
+role: Full Stack Developer
+email: ravi@example.com
+phone: "+91-9876543210"
+
+project:
+  name: FoodNest
+  type: Food Ordering Web App
+  tech_stack:
+    - Java
+    - Servlets
+    - MySQL
+    - HTML
+    - CSS
+    - JavaScript
+
